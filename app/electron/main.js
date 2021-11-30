@@ -29,11 +29,9 @@ async function createWindow() {
     height: 600,
     title: "Application is currently initializing...",
     webPreferences: {
-      devTools: isDev,
-      // okay
-      additionalArguments: ["test"],
-      // breaks
-      //additionalArguments: [`path:${app.getPath("userData")}`],
+      devTools: isDev,      
+      //additionalArguments: ["test"], // okay      
+      additionalArguments: [`path:${app.getPath("userData")}`], // breaks
       preload: path.join(__dirname, "preload.js")      
     }
   });
